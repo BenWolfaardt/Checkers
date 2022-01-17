@@ -1,8 +1,9 @@
 package cli
 
 import (
-	"github.com/spf13/cobra"
 	"strconv"
+
+	"github.com/spf13/cobra"
 
 	"github.com/BenWolfaardt/Checkers/x/checkers/types"
 	"github.com/cosmos/cosmos-sdk/client"

@@ -83,7 +83,6 @@ import (
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 	tmjson "github.com/tendermint/tendermint/libs/json"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
-
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 	checkersmodule "github.com/BenWolfaardt/Checkers/x/checkers"
 	checkersmodulekeeper "github.com/BenWolfaardt/Checkers/x/checkers/keeper"
@@ -94,7 +93,7 @@ import (
 
 const (
 	AccountAddressPrefix = "cosmos"
-	Name                 = "Checkers"
+	Name                 = "checkers"
 )
 
 // this line is used by starport scaffolding # stargate/wasm/app/enabledProposals

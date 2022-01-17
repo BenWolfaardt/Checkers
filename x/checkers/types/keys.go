@@ -1,6 +1,8 @@
 package types
 
-import "time"
+import (
+	"time"
+)
 
 const (
 	// ModuleName defines the module name
@@ -50,11 +52,11 @@ const (
 
 const (
 	StoredGameKey          = "StoredGame-value-"
-	StoredGameEventKey     = "NewGameCreated" // Indicates what key to listen to
+	StoredGameEventKey     = "NewGameCreated"
 	StoredGameEventCreator = "Creator"
-	StoredGameEventIndex   = "Index" // What game is relevant
-	StoredGameEventRed     = "Red"   // Is it relevant to me?
-	StoredGameEventBlack   = "Black" // Is it relevant to me?
+	StoredGameEventIndex   = "Index"
+	StoredGameEventRed     = "Red"
+	StoredGameEventBlack   = "Black"
 	StoredGameEventWager   = "Wager"
 	StoredGameEventToken   = "Token"
 )

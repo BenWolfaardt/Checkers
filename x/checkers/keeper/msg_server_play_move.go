@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/BenWolfaardt/Checkers/x/checkers/rules"
+	rules "github.com/BenWolfaardt/Checkers/x/checkers/rules"
 	"github.com/BenWolfaardt/Checkers/x/checkers/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
@@ -67,7 +67,7 @@ func (k msgServer) PlayMove(goCtx context.Context, msg *types.MsgPlayMove) (*typ
 	storedGame.Deadline = types.FormatDeadline(types.GetNextDeadline(ctx))
 	storedGame.Winner = game.Winner().Color
 
-	// Send to the back of the FIFO
+	// Remove from or send to the back of the FIFO
 	nextGame, found := k.Keeper.GetNextGame(ctx)
 	if !found {
 		panic("NextGame not found")
@@ -100,7 +100,7 @@ func (k msgServer) PlayMove(goCtx context.Context, msg *types.MsgPlayMove) (*typ
 			sdk.NewAttribute(types.PlayMoveEventIdValue, msg.IdValue),
 			sdk.NewAttribute(types.PlayMoveEventCapturedX, strconv.FormatInt(int64(captured.X), 10)),
 			sdk.NewAttribute(types.PlayMoveEventCapturedY, strconv.FormatInt(int64(captured.Y), 10)),
-			sdk.NewAttribute(types.PlayMoveEventWinner, game.Winner().Color),
+			sdk.NewAttribute(types.PlayMoveEventWinner, storedGame.Winner),
 		),
 	)
 
@@ -109,6 +109,6 @@ func (k msgServer) PlayMove(goCtx context.Context, msg *types.MsgPlayMove) (*typ
 		IdValue:   msg.IdValue,
 		CapturedX: int64(captured.X),
 		CapturedY: int64(captured.Y),
-		Winner:    game.Winner().Color,
+		Winner:    storedGame.Winner,
 	}, nil
 }

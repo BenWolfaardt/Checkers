@@ -47,6 +47,35 @@ curl https://get.starport.network/BenWolfaardt/Checkers@latest! | sudo bash
 ```
 `BenWolfaardt/Checkers` should match the `username` and `repo_name` of the Github repository to which the source code was pushed. Learn more about [the install process](https://github.com/allinbits/starport-installer).
 
+## Progressive feature branches
+
+* `starport-start`
+* `rules-added`
+* `stored-game`
+* `full-game-object`
+* `create-game-msg`
+* `create-game-handler`
+* `play-move-msg`
+* `play-move-handler`
+* `two-events`
+* `reject-game-msg`
+* `reject-game-handler`
+* `game-fifo`
+* `game-deadline`
+* `game-winner`
+* `forfeit-game`
+* `game-wager`
+* `payment-winning`
+* `gas-meter`
+* `can-play-move-query`
+* `can-play-move-handler`
+* `wager-denomination`
+* `player-info-object`
+* `player-info-handling`
+* `leaderboard-object`
+* `leaderboard-handling`
+* `genesis-migration`
+
 ## Learn more
 
 - [Starport](https://github.com/tendermint/starport)

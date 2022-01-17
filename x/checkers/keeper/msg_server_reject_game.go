@@ -4,7 +4,7 @@ import (
 	"context"
 	"strings"
 
-	"github.com/BenWolfaardt/Checkers/x/checkers/rules"
+	rules "github.com/BenWolfaardt/Checkers/x/checkers/rules"
 	"github.com/BenWolfaardt/Checkers/x/checkers/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"

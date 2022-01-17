@@ -35,6 +35,7 @@ func (k Keeper) RemoveFromFifo(ctx sdk.Context, game *types.StoredGame, info *ty
 	game.AfterId = types.NoFifoIdKey
 }
 
+// WARN It does not save game or info.
 func (k Keeper) SendToFifoTail(ctx sdk.Context, game *types.StoredGame, info *types.NextGame) {
 	if info.FifoHead == types.NoFifoIdKey && info.FifoTail == types.NoFifoIdKey {
 		game.BeforeId = types.NoFifoIdKey

@@ -17,41 +17,37 @@ service Query {
 
 	// Queries a leaderboard by index.
 	rpc Leaderboard(QueryGetLeaderboardRequest) returns (QueryGetLeaderboardResponse) {
-		option (google.api.http).get = "/BenWolfaardt/checkers/checkers/leaderboard";
+		option (google.api.http).get = "/BenWolfaardt/Checkers/checkers/leaderboard";
 	}
-
 
 	// Queries a playerInfo by index.
 	rpc PlayerInfo(QueryGetPlayerInfoRequest) returns (QueryGetPlayerInfoResponse) {
-		option (google.api.http).get = "/BenWolfaardt/checkers/checkers/playerInfo/{index}";
+		option (google.api.http).get = "/BenWolfaardt/Checkers/checkers/playerInfo/{index}";
 	}
 
 	// Queries a list of playerInfo items.
 	rpc PlayerInfoAll(QueryAllPlayerInfoRequest) returns (QueryAllPlayerInfoResponse) {
-		option (google.api.http).get = "/BenWolfaardt/checkers/checkers/playerInfo";
+		option (google.api.http).get = "/BenWolfaardt/Checkers/checkers/playerInfo";
 	}
-
 
 	// Queries a list of canPlayMove items.
 	rpc CanPlayMove(QueryCanPlayMoveRequest) returns (QueryCanPlayMoveResponse) {
-		option (google.api.http).get = "/BenWolfaardt/checkers/checkers/canPlayMove";
+		option (google.api.http).get = "/BenWolfaardt/Checkers/checkers/canPlayMove";
 	}
-
 
 	// Queries a storedGame by index.
 	rpc StoredGame(QueryGetStoredGameRequest) returns (QueryGetStoredGameResponse) {
-		option (google.api.http).get = "/BenWolfaardt/checkers/checkers/storedGame/{index}";
+		option (google.api.http).get = "/BenWolfaardt/Checkers/checkers/storedGame/{index}";
 	}
 
 	// Queries a list of storedGame items.
 	rpc StoredGameAll(QueryAllStoredGameRequest) returns (QueryAllStoredGameResponse) {
-		option (google.api.http).get = "/BenWolfaardt/checkers/checkers/storedGame";
+		option (google.api.http).get = "/BenWolfaardt/Checkers/checkers/storedGame";
 	}
-
 
 	// Queries a nextGame by index.
 	rpc NextGame(QueryGetNextGameRequest) returns (QueryGetNextGameResponse) {
-		option (google.api.http).get = "/BenWolfaardt/checkers/checkers/nextGame";
+		option (google.api.http).get = "/BenWolfaardt/Checkers/checkers/nextGame";
 	}
 
 }
@@ -78,6 +74,7 @@ message QueryAllPlayerInfoResponse {
 	repeated PlayerInfo PlayerInfo = 1;
 	cosmos.base.query.v1beta1.PageResponse pagination = 2;
 }
+
 message QueryCanPlayMoveRequest {
   string idValue = 1;
   string player = 2;
@@ -108,6 +105,7 @@ message QueryAllStoredGameResponse {
 	repeated StoredGame StoredGame = 1;
 	cosmos.base.query.v1beta1.PageResponse pagination = 2;
 }
+
 message QueryGetNextGameRequest {}
 
 message QueryGetNextGameResponse {
